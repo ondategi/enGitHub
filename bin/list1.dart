@@ -3,6 +3,34 @@ import 'package:mongo_dart/mongo_dart.dart';
 
 main() {
   
+  var decoded = JSON.decode('["foo", { "bar": 499 }]');
+  
+  Map<String, int> map = decoded[1];
+  
+  print(decoded);
+
+  print(map["bar"]);
+  
+  
+  List kk3 = JSON.decode('[{"oid":"1398438240369","code":null,"title":"a","completed":"false","updated":"2014-04-23 17:53:23.030"}]');
+ // List kk3 = JSON.decode('[{"oid":"1398438240369"},{"code":null},{"title":"a"},{"completed":"false"},{"updated":"2014-04-23 17:53:23.030"}]');
+  
+  Map kk3tua = JSON.decode('[{"oid":"1398438240369","code":null,"title":"a","completed":"false","updated":"2014-04-23 17:53:23.030"}]');
+
+  Map porfa = new Map();
+  kk3.forEach((v){
+  //  var deco1 =JSON.decode(v.toString());
+    Map<String, dynamic> map44 = v;
+    porfa.addAll(map44);
+    print(v);
+    }); // prints A c a b
+  
+  print(porfa["oid"]);
+  
+  String maspor = JSON.encode(porfa);
+  print(maspor);
+
+
   void displayZip(Map zip) {
     print('partido: ${zip["partido"]}');
   }
