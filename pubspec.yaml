@@ -1,0 +1,4 @@
+name: list1
+description: A sample command-line application
+dependencies:
+  mongo_dart: any
